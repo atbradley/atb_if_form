@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>atb_if_form</title>
+   <link href="http://webfonts.fontslive.com/css/a429f7ba-c1d8-450f-9192-428ab583bde1.css" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css">
+   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.1/build/base/base-min.css">
+   <link rel="stylesheet" type="text/css" href="core.css">
+</head>
+<body>
+<div id="doc3" class="yui-t7">
+   <div id="header" role="banner"><h1>atb_if_form</h1></div>
+   <div id="bd" role="main">
+	<div class="yui-gb">
+		 <div id="about" class="yui-u first">
+			 <h2>About</h2>
+			 <p>
+			   Lately, IÕve been writing Textpattern pages for relatively complex sites
+			   that do things like this:
+			 </p>
+			 <pre><code>&lt;txp:if_section
+    name=&quot;widgets,sprockets,thingies&quot;&gt;
+    &lt;txp:hide&gt;The widgets, sprockets,
+	and thingies sections have their own
+	special layouts.&lt;/txp:hide&gt;
+    &lt;txp:output_form
+	  form=&#39;content-&lt;txp:section /&gt;&#39; /&gt;
+&lt;txp:else /&gt;
+    &lt;txp:hide&gt;All the other sections look pretty
+	much the same.&lt;/txp:hide&gt;
+    &lt;txp:output_form form=&#39;content-default&#39; /&gt;
+&lt;/txp:if_section&gt;
+</code></pre>
+			 <p>
+			   This plugin is designed to simplify this somewhat, and eliminate that list
+			   of section names (which is just one more thing for me to forget to update
+			   when I change the site).
+			 </p>  
+			 <p>
+			   Developed by <a href="http://www.adamtbradley.com/">Adam T. Bradley</a>.
+			 </p>
+		 </div>
+		 <div class="yui-u" id="example">
+			<h2>Tags</h2>
+			<h3>atb_if_form</h3>
+			
+			<h3>atb_output_form_if_exists</h3>
+			<p>
+			   Can be used exactly the same way as the built-in output_form tag, except
+			   it doesn&#8217;t produce a warning if the form provided doesn&#8217;t exist. It can
+			   alternately be used with a <code>txp:else</code> tag, in which case the
+			   value before <code>else</code> will be available via <code>txp:yield</code>:
+			</p>
+			<pre><code>&lt;txp:atb_output_form_if_exists
+   form=&#39;foo-&lt;txp:section /&gt;&#39;&gt;
+    This text will be available via
+	the txp:yield tag in foo-[section].
+&lt;txp:else /&gt;
+    &lt;txp:output_form form=&quot;foo-default&quot; /&gt;
+&lt;/txp:atb_output_form_if_exists&gt;
+			</pre></code>
+			   
+		 </div>
+		 <div id="downloads" class="yui-u">
+			<h2>Downloads</h2>
+			<ul>
+			   <li><a href="http://github.com/atbradley/atb_if_form/downloads">Downloads</a>
+				  (current stable version ready to install in Textpattern)</li>
+			   <li><a href="http://github.com/atbradley/atb_if_form/">Project on Github</a></li>
+			</ul> 
+		 </div>
+    </div>
+
+	</div>
+   <div id="ft" role="contentinfo"><p>Made with <a href="http://www.activestate.com/komodo-ide">Komodo</a> and coffee. Powered by <a href="http://www.github.com/">GitHub</a>.</p></div>
+</div>
+</body>
+</html>
